@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Task!{% endblock %}
+
+{% block body %}
+    <a href="/">Home</a><br>
+    <a href="/logout">Logout</a><br><br>
+    {{ task.author.email }}<br />
+    {{ task.name }}: {{ task.description }}
+    {% if task.id %}
+        <br><a href="/task/{{ task.id }}/update">Обновить</a>
+    {% endif %}
+    <br>
+    <br>Комментарии:<br>
+    <ul id="navigation">
+        {% for comment in comments %}
+            <li>{{ comment.author.email }}: "{{ comment.text }}"<br />{{ comment.date|date("m/d/Y") }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {{ form_start(form) }}
+        {{ form_row(form.text) }}
+        {{ form_row(form.save) }}
+        {{ form_end(form) }}
+    </form>
+{% endblock %}

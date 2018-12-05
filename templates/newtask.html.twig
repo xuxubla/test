@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<a href="/">Home</a><br>
+<a href="/logout">Logout</a><br><br>
+<form method="post">
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.executor) }}
+    {{ form_row(form.status) }}
+    {{ form_row(form.save) }}
+    {{ form_end(form) }}
+</form>
+{% endblock %}

@@ -1,3 +1,23 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\TaskController::index
+registration:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+tasks:
+    path: /
+    controller: App\Controller\SecurityController::login
+task-create:
+    path: /task/create
+    controller: App\Controller\TaskController::createTask
+task-update:
+    path: /task/{id}/update
+    controller: App\Controller\TaskController::updateTask
+task:
+    path: /task/{id}
+    controller: App\Controller\TaskController::getTask
+logout:
+    path: /logout

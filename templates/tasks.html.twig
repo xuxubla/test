@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tasks!{% endblock %}
+
+{% block body %}
+<a href="/logout">Logout</a><br><br>
+<table>
+    <table>
+        <tr>
+            <td>Название</td>
+            <td>Описание</td>
+            <td>Статус</td>
+            <td>Комментарий</td>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td><a href="/task/{{ task.id }}">{{ task.name }}</a></td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.comment }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
